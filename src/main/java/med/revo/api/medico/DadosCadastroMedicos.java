@@ -1,4 +1,6 @@
-package med.revo.api;
+package med.revo.api.medico;
+
+import med.revo.api.endereco.DadosEndereco;
 
 public record DadosCadastroMedicos(
         String nome,
