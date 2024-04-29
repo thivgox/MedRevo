@@ -7,7 +7,10 @@ import med.revo.api.medico.DadosListagemMedicos;
 import med.revo.api.medico.Medico;
 import med.revo.api.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +29,15 @@ public class MedicoController {
     }
 
     @GetMapping
-    public List<DadosListagemMedicos> listar() {
-        return repository.findAll().stream().map(DadosListagemMedicos::new).toList();
+    public Page<DadosListagemMedicos> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
+        return repository.findAll(paginacao).map(DadosListagemMedicos::new);
     }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid AtualizarDados atualizarDados ){
+        var medico = repository.getReferenceById(atualizarDados.id());
+        medico.atualizarInfo(atualizarDados);
+    }
+
 }

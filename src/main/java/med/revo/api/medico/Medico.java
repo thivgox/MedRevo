@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.revo.api.controller.AtualizarDados;
 import med.revo.api.endereco.DadosEndereco;
 import med.revo.api.endereco.Endereco;
 
@@ -35,5 +36,23 @@ public class Medico {
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
         this.telefone = dados.telefone();
+    }
+
+    public void atualizarInfo(AtualizarDados atualizarDados) {
+        if(atualizarDados.nome()!= null){
+            this.nome = atualizarDados.nome();
+        }
+        if(atualizarDados.telefone()!= null){
+            this.telefone = atualizarDados.telefone();
+        }
+        if(atualizarDados.email()!= null){
+            this.email = atualizarDados.email();
+
+        }
+        if(atualizarDados.endereco() != null){
+            this.endereco = atualizarDados.endereco();
+        }
+
+
     }
 }
