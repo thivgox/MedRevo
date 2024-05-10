@@ -28,8 +28,11 @@ public class Medico {
     private Especialidade especialidade;
     @Embedded
     private Endereco endereco;
+    private Boolean ativo;
+
 
     public Medico(DadosCadastroMedicos dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
         this.crm = dados.crm();
@@ -55,4 +58,9 @@ public class Medico {
 
 
     }
+
+    public void excluir(){
+        this.ativo=false;
+    }
+
 }

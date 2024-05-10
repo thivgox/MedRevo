@@ -1,7 +1,7 @@
-package med.revo.api.controller;
+package med.revo.api.domain.controller;
 
 import jakarta.validation.constraints.NotNull;
-import med.revo.api.endereco.Endereco;
+import med.revo.api.domain.endereco.Endereco;
 
 public record AtualizarDados(
         @NotNull
