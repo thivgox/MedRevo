@@ -1,4 +1,4 @@
-package med.revo.api.domain.controller;
+package med.revo.api.controller;
 
 import jakarta.validation.constraints.NotNull;
 import med.revo.api.domain.endereco.Endereco;

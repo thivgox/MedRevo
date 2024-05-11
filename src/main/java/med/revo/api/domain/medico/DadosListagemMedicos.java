@@ -1,4 +1,4 @@
-package med.revo.api.medico;
+package med.revo.api.domain.medico;
 
 public record DadosListagemMedicos(String nome,Long id,String email, String crm, Especialidade especialidade) {
 

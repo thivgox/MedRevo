@@ -1,9 +1,9 @@
-package med.revo.api.domain.controller;
+package med.revo.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.revo.api.domain.medico.*;
-import med.revo.api.medico.*;
+import med.revo.api.domain.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
