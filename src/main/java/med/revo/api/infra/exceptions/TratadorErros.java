@@ -1,4 +1,4 @@
-package med.revo.api.infra;
+package med.revo.api.infra.exceptions;
 
 
 import jakarta.persistence.EntityNotFoundException;
